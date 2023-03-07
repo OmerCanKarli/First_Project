@@ -3,11 +3,11 @@
 class Employee 
 {
 
-	private $name;
+	private static $name;
 
-	public $age;
+	private static $age;
 
-	public $salary;
+	private static $salary;
 
 
 
@@ -15,35 +15,35 @@ class Employee
     public function __construct($name, $age, $salary)
     {
 
-        $this->name = $name;
+        self::$name = $name;
 
-        $this->age = $age;
+        static::$age = $age;
 
-        $this->salary = $salary;
+        static::$salary = $salary;
 
     }
 
 
 
-	public function setName($name)
+	public static function setName($name)
 	{
-		$this->name = $name;
+		self::$name = $name;
 	}
 
-	public function getName(): string
+	public static function getName(): string
 	{
-		return $this->name;
+		return self::$name;
 	}
 
 
-    public function disp_val()
+    public static function disp_val()
     {
 
-        echo "Name: " . $this->name . "<br>";
+        echo "Name: " . self::$name . "<br>";
 
-        echo "Age: " . $this->age . "<br>";
+        echo "Age: " . self::$age . "<br>";
 
-        echo "Salary: " . $this->salary . "<br>";
+        echo "Salary: " . self::$salary . "<br>";
 
     }
 
@@ -53,4 +53,4 @@ class Employee
 $employee_1 = new Employee(age: 23, salary: 234567, name: "Omer");
 
 
-$employee_1->disp_val();
+Employee::disp_val();
