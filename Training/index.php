@@ -1,6 +1,8 @@
 <?php
 
 
+//       asdkjsoşgdfkvdşdofkgvşozdznf
+
 class Employee 
 {
 
@@ -10,7 +12,7 @@ class Employee
 
 	public $salary;
 
-    
+
 
 
     public function __construct($name, $age, $salary)
